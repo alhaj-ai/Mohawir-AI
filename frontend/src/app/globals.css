@@ -1,0 +1,149 @@
+@import "tailwindcss";
+
+/* ============================================================
+   خط ثمانية الرسمي (Thmanyah Font Family)
+   ============================================================ */
+
+@font-face {
+  font-family: 'Thmanyah';
+  src: url('/fonts/thmanyahsans-Light.woff2') format('woff2');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Thmanyah';
+  src: url('/fonts/thmanyahsans-Regular.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Thmanyah';
+  src: url('/fonts/thmanyahsans-Medium.woff2') format('woff2');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Thmanyah';
+  src: url('/fonts/thmanyahsans-Bold.woff2') format('woff2');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Thmanyah';
+  src: url('/fonts/thmanyahsans-Black.woff2') format('woff2');
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+:root {
+  --font-sans: 'Thmanyah', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --background: #06110e;
+  --foreground: #f1f5f9;
+  
+  /* منظومة ألوان مُحاوِر الزمردية الملكية */
+  --brand-deep: #061511;
+  --brand-dark: #0a231c;
+  --brand-mid: #103c30;
+  --brand-accent: #10b981;
+  --brand-glow: #34d399;
+  --brand-soft: #d1fae5;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-sans);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-family: var(--font-sans);
+}
+
+body {
+  background-color: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans);
+  direction: rtl;
+  text-align: right;
+  overflow-x: hidden;
+}
+
+/* التدرجات اللونية الفاخرة للعلامة التجارية */
+.bg-brand-gradient {
+  background: radial-gradient(circle at 50% 0%, #0d382c 0%, #061511 60%, #030807 100%);
+}
+
+.bg-brand-card {
+  background: rgba(10, 35, 28, 0.6);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(52, 211, 153, 0.15);
+}
+
+.bg-brand-card:hover {
+  border-color: rgba(52, 211, 153, 0.35);
+}
+
+.text-gradient {
+  background: linear-gradient(135deg, #a7f3d0 0%, #34d399 50%, #10b981 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.text-gradient-gold {
+  background: linear-gradient(135deg, #fef08a 0%, #facc15 50%, #eab308 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* حركات بصرية متقدمة */
+@keyframes pulse-subtle {
+  0%, 100% { opacity: 0.8; transform: scale(1); }
+  50% { opacity: 1; transform: scale(1.02); }
+}
+
+.animate-pulse-subtle {
+  animation: pulse-subtle 4s ease-in-out infinite;
+}
+
+@keyframes wave-bar {
+  0%, 100% { height: 8px; }
+  50% { height: 28px; }
+}
+
+.animate-wave {
+  animation: wave-bar 1.2s ease-in-out infinite;
+}
+
+/* شريط تمرير أنيق */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #06110e;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #103c30;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #10b981;
+}
